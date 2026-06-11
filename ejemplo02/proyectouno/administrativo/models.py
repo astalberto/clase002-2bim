@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime as dt
 # Create your models here.
 
 class Estudiante(models.Model):
@@ -25,3 +25,7 @@ class Estudiante(models.Model):
                 self.cedula,
                 self.edad,
                 self.tipo_estudiante)
+
+    def obtener_anio_nacimiento(self):
+        """a"""
+        return dt.datetime.now().year - self.edad
